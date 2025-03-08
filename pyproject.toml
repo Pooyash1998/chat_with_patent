@@ -1,0 +1,24 @@
+[project]
+name = "chat-with-patent"
+version = "0.1.0"
+description = "Chat with a patent that is available on Google"
+authors = [
+    {name = "Pouya Esfahani"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "streamlit (>=1.43.1,<2.0.0)",
+    "watchdog (>=6.0.0,<7.0.0)",
+    "chromedriver-autoinstaller (>=0.6.4,<0.7.0)",
+    "selenium (>=4.29.0,<5.0.0)",
+    "webdriver-manager (>=4.0.2,<5.0.0)",
+    "langchain-openai (>=0.3.8,<0.4.0)",
+    "langchain-huggingface (>=0.1.2,<0.2.0)",
+    "langchain-community (>=0.3.19,<0.4.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
