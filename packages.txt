@@ -1,1 +1,2 @@
 chromium=120.0.6099.224-1~deb11u1
+chromium-driver=120.0.6099.224-1~deb11u1
