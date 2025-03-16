@@ -9,10 +9,15 @@ from langchain_community.chat_message_histories import StreamlitChatMessageHisto
 import streamlit as st
 import torch
 import os
-##### Streamlit clouds sqlite3 is outdated, so we need to use pysqlite3
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+##### Streamlit clouds sqlite3 is outdated, so we need to use pysqlite3 instead
+##### This is a temporary fix, it overrides the sqlite3 module with pysqlite3
+##### If pysqlite3 is not installed, i.e. we are not using streamlit cloud, it will use the default sqlite3 
+try:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    print("pysqlite3 is not installed. Using default sqlite3.")
 #####
 from langchain_chroma import Chroma
 
