@@ -1,2 +1,28 @@
-# chat_with_patent
-A Streamlit app that allows users to interact with Google Patents data. By providing a Google Patents link, users can extract the patent number, download the associated patent PDF, and chat with an AI assistant (powered by OpenAi LLMs) about the patent's content. Users can also download the entire chat history as a PDF for reference.
+# Chat with Google Patents
+
+This is a Streamlit-based web application that allows you to interact with Google Patents data. The app allows users to chat with AI-powered insights from patent documents. It integrates with OpenAI's GPT-based models and the Google Patents database to retrieve and process patent information for user queries.
+
+## Features
+
+- **Patent Search**: Chat with an AI model to extract and answer questions related to Google Patents data.
+- **Download Chat History**: Users can download the entire chat history as a PDF for reference.
+- **Patent Download**: Automatically download the relevant patent PDF file when a patent link is provided.
+- **Customizable**: Allows the user to provide their own OpenAI API key and patent link for a personalized experience.
+
+## Tech Stack
+
+- **Frontend**: Streamlit
+- **Backend**: OpenAI GPT Model (via Langchain)
+- **File Handling**: `fpdf` for generating downloadable PDFs
+- **Web Scraping**: Custom patent downloader script
+- **API Integration**: Google Patents API
+
+## Installation
+
+To run this app locally, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Pooyash1998/chat_with_patent.git
+cd chat_with_patent
