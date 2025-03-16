@@ -35,7 +35,7 @@ class PatentDownloader:
           options.add_argument("--disable-dev-shm-usage")
 
           service = Service(ChromeDriverManager(
-                chrome_type=ChromeType.CHROMIUM, driver_version="136.0.7064.0").install())
+                chrome_type=ChromeType.CHROMIUM, driver_version="120.0.6099").install())
           driver = webdriver.Chrome(service=service, options=options)
 
           return driver

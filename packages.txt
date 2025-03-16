@@ -1,1 +1,1 @@
-chromium
+chromium=120.0.x.x
