@@ -31,7 +31,7 @@ class PatentDownloader:
         """Set up the WebDriver with the right binary location (Chrome/Chromium)"""
         if self._check_browser_binary() is True :
           options = Options()
-          #options.add_argument("--headless")
+          options.add_argument("--headless")
           options.add_argument("--no-sandbox")
           options.add_argument("--disable-dev-shm-usage")
 
