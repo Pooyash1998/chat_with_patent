@@ -34,7 +34,7 @@ class PatentDownloader:
           options.add_argument("--no-sandbox")
           options.add_argument("--disable-dev-shm-usage")
 
-          service = Service(ChromeDriverManager(
+          service = Service(ChromeDriverManager(driver_version=None,
                 chrome_type=ChromeType.CHROMIUM).install())
           driver = webdriver.Chrome(service=service, options=options)
 
@@ -89,9 +89,9 @@ class PatentDownloader:
         """Closes the WebDriver session."""
         self.driver.quit()
 
-#"""
+"""
 # test
 if __name__ == "__main__":
     downloader = PatentDownloader()
     downloader.download("US20200140525A1")
-#"""    
+"""    

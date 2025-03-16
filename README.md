@@ -16,7 +16,7 @@ If you wish to run it locally, please note the following:
 
 1. **SQLite3 Compatibility**: Streamlit's SQLite3 is not updated, so the app imports `pysqlite3` instead. The `pysqlite3` package is added to the `requirements.txt` (which Streamlit uses), but when running the app locally, you should only use `poetry.lock` or avoid installing `pysqlite3` manually.
 
-2. **Chromium Version**: Due to version issues, the Chromium version that Streamlit uses is fixed. Make sure to install the appropriate Chromium version based on your operating system before proceeding. Additionally, in the `patent_download.py` class, you should update the `driver_version` to be compatible with your Chromium version.
+2. **Chromium Version**: Due to version issues, the Chromium version that Streamlit uses is fixed. Make sure to install the appropriate Chromium version based on your operating system before proceeding. Additionally, in the `patent_download.py` class, you should update the `driver_version` at line 37 to be compatible with your Chromium version.
 
 ## Installation
 
