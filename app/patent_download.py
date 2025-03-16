@@ -1,7 +1,7 @@
-from typing import Union, Set, List
+from typing import Union, List
 import os, requests
 import shutil
-from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager, ChromeType
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -26,7 +26,6 @@ class PatentDownloader:
             if path:
                 return True
         raise RuntimeError("Neither Google Chrome nor Chromium is installed!")
-    
     def _get_driver(self):
         """Set up the WebDriver with the right binary location (Chrome/Chromium)"""
         if self._check_browser_binary() is True :
@@ -35,7 +34,8 @@ class PatentDownloader:
           options.add_argument("--no-sandbox")
           options.add_argument("--disable-dev-shm-usage")
 
-          service = Service(ChromeDriverManager().install())
+          service = Service(ChromeDriverManager(
+                chrome_type=ChromeType.CHROMIUM, driver_version="136.0.7064.0").install())
           driver = webdriver.Chrome(service=service, options=options)
 
           return driver
@@ -89,9 +89,9 @@ class PatentDownloader:
         """Closes the WebDriver session."""
         self.driver.quit()
 
-"""
+#"""
 # test
 if __name__ == "__main__":
     downloader = PatentDownloader()
     downloader.download("US20200140525A1")
-"""    
+#"""    
