@@ -6,10 +6,17 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from langchain_chroma import Chroma
 import streamlit as st
 import torch
 import os
+##### Streamlit clouds sqlite3 is outdated, so we need to use pysqlite3
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+#####
+from langchain_chroma import Chroma
+
+
 
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)] 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
