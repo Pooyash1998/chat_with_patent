@@ -9,13 +9,14 @@ This is a Streamlit-based web application that allows you to interact with Googl
 - **Patent Download**: Automatically download the relevant patent PDF file when a patent link is provided.
 - **Customizable**: Allows the user to provide their own OpenAI API key and patent link for a personalized experience.
 
-## Installation
+## Usage
+This app is deployed on Streamlit Cloud and can be accessed via this link: [http://chat-with-patent.streamlit.app](http://chat-with-patent.streamlit.app/).
 
-1. Clone the repository and navigate to the
-- **Backend**: OpenAI GPT Model (via Langchain)
-- **File Handling**: `fpdf` for generating downloadable PDFs
-- **Web Scraping**: Custom patent downloader script
-- **API Integration**: Google Patents API
+If you wish to run it locally, please note the following:
+
+1. **SQLite3 Compatibility**: Streamlit's SQLite3 is not updated, so the app imports `pysqlite3` instead. The `pysqlite3` package is added to the `requirements.txt` (which Streamlit uses), but when running the app locally, you should only use `poetry.lock` or avoid installing `pysqlite3` manually.
+
+2. **Chromium Version**: Due to version issues, the Chromium version that Streamlit uses is fixed. Make sure to install the appropriate Chromium version based on your operating system before proceeding. Additionally, in the `patent_download.py` class, you should update the `driver_version` to be compatible with your Chromium version.
 
 ## Installation
 
@@ -28,21 +29,7 @@ git clone https://github.com/Pooyash1998/chat_with_patent.git
 cd chat_with_patent
 ```
 
-### 2. Install system dependencies
-
-Depending on your operating system, install the required system-level dependencies listed in `packages.txt`:
-
-- For Ubuntu/Debian:
-```bash
-cat packages.txt | xargs sudo apt-get install -y
-```
-
-- For macOS:
-```bash
-cat packages.txt | xargs brew install
-```
-
-### 3. Setup Virtual Environment
+### 2. Setup Virtual Environment
 
 You can choose any methods to set up your environmen. You may use conda or venv instead of poetry integrated venvs but make sure to install all the packages in poetry.lock manually according to your usecase.
 
