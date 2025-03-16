@@ -1,1 +1,1 @@
-chromium=136.0.7072.0
+chromium=136.0.x.x
